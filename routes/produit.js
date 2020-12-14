@@ -10,4 +10,5 @@ router.post('/', multer, produitCtrl.creerProduit);
 router.delete('/:id', produitCtrl.deleteProduit);
 router.get('/:id', produitCtrl.getProduitById);
 router.put('/:id', multer, produitCtrl.modifierProduit);
+router.get('/categorie/:categorie', produitCtrl.getProduitsByCategorie);
 module.exports = router;

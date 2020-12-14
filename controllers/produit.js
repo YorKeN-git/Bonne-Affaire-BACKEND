@@ -66,3 +66,17 @@ exports.getProduitById = (req, res, next) => {
         }
     );
 };
+
+exports.getProduitsByCategorie = (req, res, next) => {
+    Produit.find({
+        categorie: req.params.categorie
+    }).then(
+        (produits) => {
+            res.status(200).json(produits);
+        }
+    ).catch(
+        (error) => {
+            res.status(404).json({ error: error });
+        }
+    );
+};
