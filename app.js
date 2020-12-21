@@ -5,6 +5,7 @@ const app = express();
 
 const produitRoutes = require('./routes/produit');
 const userRoutes = require('./routes/user');
+const commandeRoutes = require('./routes/commande');
 const path = require('path');
 
 mongoose.connect('mongodb+srv://admin:admin@cluster0.92r9j.mongodb.net/produits?retryWrites=true&w=majority', {
@@ -25,5 +26,6 @@ app.use(bodyParser.json());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/produit', produitRoutes);
 app.use('/api/auth', userRoutes);
+app.use('/api/commande', commandeRoutes);
 
 module.exports = app;
